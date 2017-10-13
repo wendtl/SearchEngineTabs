@@ -1,15 +1,12 @@
 {
     "manifest_version": 2,
     "name": "Search Engine Tabs",
+    "description": "Quickly switch between search engines",
     "version": "0.1",
-    "permissions": ["tabs", "http://*.google.com/*", "https://*.google.com/*",
-                    "http://duckduckgo.com/*", "https://duckduckgo.com/*",
-                    "http://bing.com/*", "https://bing.com/*"],
+    "permissions": ["TabbedSearchExtension", "tabs", "activeTab", "*://www.google.com/*", "*://duckduckgo.com/*", "*://bing.com/*"],
     "content_scripts": [
         {
-          "matches": ["http://*.google.com/*", "https://*.google.com/*",
-            "http://duckduckgo.com/*", "https://duckduckgo.com/*",
-            "http://bing.com/*", "https://bing.com/*"],
+          "matches": ["*://www.google.com/*", "*://duckduckgo.com/*", "*://bing.com/*"],
           "js": ["script.js"],
           "css": ["styles.css"],
           "run_at": "document_end"
